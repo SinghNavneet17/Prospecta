@@ -1,0 +1,36 @@
+How will you tackle the challenge above?
+=========================================
+
+1. Validating Input sent by the user before persisting in our database. We can make use of validation API in java
+
+2. Using strong Authentication and Authorisation, this ensures the person  with right authority can access resources. 
+   We can make use Spring Security which provides built in strong security , we can add this security in our application
+   by configuring it and can use different mechanism like OAuth2.0 with client id connect.
+
+3. Exposing only limited data which is necessary: Sometimes some apis contains password and other information that need 
+   not to be shared
+
+
+Theoretical Challenge
+======================
+ To solve the challenge , We can covert CSV input into a structured format such as a 2D array . 
+ Then, we can loop through the cells and check if it contains a formula or a value. If it is a value we can return the value and  
+ If it is a formula we can calculate it by  using a formula parser and store the result.  Finally, we would write the calculated
+ values into a new CSV file.
+
+
+2. What type of errors you would you check for ?
+=================================================
+-Some errors that I would check for
+-Wrong cell references as per CSV file : (e.g.  A5 or D1 for the given case is invalid cell reference )
+-Wrong syntax for the formula :  “+B1"   
+-Circular references  : When like A1 = B1 and  B1 = A1 , both referring to each other
+
+3. How might a user break your code?
+======================================
+
+Following are the ways:
+-By inputting invalid CSV format : not separating with commas properly 
+-By using unsupported functions or formulas
+-By using incorrect cell references in formulas
+
